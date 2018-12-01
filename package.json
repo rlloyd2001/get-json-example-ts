@@ -1,0 +1,18 @@
+{
+  "name": "get-json-ts-example",
+  "version": "1.0.0",
+  "description": "nodejs/typescript example",
+  "main": "dist/get-json.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "start": "npm run build-ts && npm run get",
+    "get": "node dist/get-json.js",
+    "watch-ts": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.1"
+  }
+}
