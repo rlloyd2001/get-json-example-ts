@@ -1,7 +1,7 @@
 import { timer } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MedicationInterface } from '../medicationInterface';
-import { GetMedicationsInterface } from '../getMedicationsInterface';
+import { MedicationInterface } from '../medications/medicationInterface';
+import { GetMedicationsInterface } from '../medications/getMedicationsInterface';
 
 export const testMeds: MedicationInterface[] = [
   {
