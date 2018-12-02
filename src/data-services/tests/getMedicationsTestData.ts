@@ -29,18 +29,20 @@ export const testMeds: MedicationInterface[] = [
 export class GetMedicationsTestData implements GetMedicationsInterface {
   constructor(public medications: MedicationInterface[]) {}
 
-  get(): Promise<MedicationInterface[]> {
-    return timer(300).pipe(
+  byRxcui(rxcui: string): Promise<MedicationInterface[]> {
+    return timer().pipe(
       map(() => {
-        return this.medications;
-      })
+        return this.medications.filter(medication => medication.rxcui === rxcui);
+      }),
     ).toPromise();
   }
 
   forId(id: string): Promise<MedicationInterface> {
-    return this.get().then((medications) => {
-      return medications.find(medication => medication.id === id);
-    });
+    return timer().pipe(
+      map(() => {
+        return this.medications.find(medication => medication.id === id);
+      }),
+    ).toPromise();
   }
 }
 

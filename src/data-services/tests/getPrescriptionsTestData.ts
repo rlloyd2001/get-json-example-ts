@@ -20,7 +20,7 @@ const testPrescriptions = [
 
 export class GetPrescriptionsTestData implements GetPrescriptionsInterface{
   get(): Promise<PrescriptionInterface[]> {
-    return timer(300).pipe(
+    return timer().pipe(
       map(() => {
         return testPrescriptions;
       })

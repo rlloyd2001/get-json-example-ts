@@ -1,17 +1,17 @@
-import { GetPrescriptionsTestData } from './data-services/test-data/getPrescriptionsTestData';
-import { GetMedicationsTestData, testMeds } from './data-services/test-data/getMedicationsTestData';
 import { GetPrescriptionUpdates } from './data-services/getPrescriptionUpdates';
 import { QueryMedications } from './data-services/queryMedications';
 import { PrescriptionUpdatesDataInterface } from './prescriptionUpdatesDataInterface';
 import { SaveJsonFile } from './file-services/saveJsonFile';
+import { GetMedicationsHttp } from './data-services/getMedicationsHttp';
+import { GetPrescriptionsHttp } from './data-services/getPrescriptionsHttp';
 
 createPrescriptionUpdatesJson();
 
 async function createPrescriptionUpdatesJson() {
-  const getPrescriptions = new GetPrescriptionsTestData();
-  const prescriptions = await getPrescriptions.get();
-  const getMedications = new GetMedicationsTestData(testMeds);
-  const getPrescriptionUpdates = new GetPrescriptionUpdates(new QueryMedications(getMedications));
+  const getPrescriptionsHttp = new GetPrescriptionsHttp();
+  const prescriptions = await getPrescriptionsHttp.get();
+  const getMedicationsHttp = new GetMedicationsHttp();
+  const getPrescriptionUpdates = new GetPrescriptionUpdates(new QueryMedications(getMedicationsHttp));
   const prescriptionUpdates = await getPrescriptionUpdates.from(prescriptions);
   const fileData: PrescriptionUpdatesDataInterface = { prescription_updates: prescriptionUpdates };
   const saveJsonFile = new SaveJsonFile();
