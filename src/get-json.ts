@@ -8,5 +8,6 @@ async function createPrescriptionUpdatesJson() {
   const getPrescriptions = new GetPrescriptions();
   const prescriptions = await getPrescriptions.get();
   const getPrescriptionUpdates = new GetPrescriptionUpdates(new GetMedications());
-  const prescriptionUpdates = getPrescriptionUpdates.from(prescriptions);
+  const prescriptionUpdates = await getPrescriptionUpdates.from(prescriptions);
+  console.log('presc updates', JSON.stringify(prescriptionUpdates));
 }

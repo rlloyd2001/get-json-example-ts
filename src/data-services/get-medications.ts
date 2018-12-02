@@ -39,4 +39,10 @@ export class GetMedications {
       return medications.filter(medication => medication.rxcui === rxcui);
     });
   }
+
+  forId(id: string): Promise<MedicationInterface> {
+    return this.get().then((medications) => {
+      return medications.find(medication => medication.id === id);
+    });
+  }
 }
