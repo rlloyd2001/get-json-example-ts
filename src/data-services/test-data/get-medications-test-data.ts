@@ -1,6 +1,7 @@
 import { timer } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MedicationInterface } from './medication-interface';
+import { MedicationInterface } from '../medication-interface';
+import { GetMedicationsInterface } from '../get-medications-interface';
 
 const testMeds = [
   {
@@ -25,8 +26,8 @@ const testMeds = [
   }
 ];
 
-export class GetMedications {
-  get(): Promise<MedicationInterface[]> {
+export class GetMedicationsTestData implements GetMedicationsInterface {
+  private get(): Promise<MedicationInterface[]> {
     return timer(300).pipe(
       map(() => {
         return testMeds;

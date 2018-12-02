@@ -1,6 +1,7 @@
-import { PrescriptionInterface } from './prescription-interface';
+import { PrescriptionInterface } from '../prescription-interface';
 import { timer } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { GetPrescriptionsInterface } from '../get-prescriptions-interface';
 
 const testPrescriptions = [
   {
@@ -17,7 +18,7 @@ const testPrescriptions = [
   }
 ];
 
-export class GetPrescriptions {
+export class GetPrescriptionsTestData implements GetPrescriptionsInterface{
   get(): Promise<PrescriptionInterface[]> {
     return timer(300).pipe(
       map(() => {

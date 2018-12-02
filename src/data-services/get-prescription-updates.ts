@@ -1,11 +1,11 @@
 import { PrescriptionInterface } from './prescription-interface';
-import { GetMedications } from './get-medications';
 import { PrescriptionUpdateInterface } from './prescription-update-interface';
 import { GetGenericMedicationSubstitute } from './get-generic-medication-substitute';
 import { MedicationInterface } from './medication-interface';
+import { GetMedicationsInterface } from './get-medications-interface';
 
 export class GetPrescriptionUpdates {
-  constructor(public getMedications: GetMedications) { }
+  constructor(public getMedications: GetMedicationsInterface) { }
 
   from(prescriptions: PrescriptionInterface[]): Promise<PrescriptionUpdateInterface[]> {
     const getGeneric = new GetGenericMedicationSubstitute(this.getMedications);
@@ -27,8 +27,6 @@ export class GetPrescriptionUpdates {
         });
       promises.push(promise);
     });
-    return Promise.all<any>(promises).then((value) => {
-      return updates;
-    });
+    return Promise.all<any>(promises).then(() => updates);
   }
 }

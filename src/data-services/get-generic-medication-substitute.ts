@@ -1,9 +1,8 @@
-import { GetMedications } from './get-medications';
 import { MedicationInterface } from './medication-interface';
+import { GetMedicationsInterface } from './get-medications-interface';
 
 export class GetGenericMedicationSubstitute {
-  constructor(public getMedications: GetMedications) {
-  }
+  constructor(public getMedications: GetMedicationsInterface) {}
 
   from(medication: MedicationInterface): Promise<MedicationInterface | null> {
     if (medication.generic) {
