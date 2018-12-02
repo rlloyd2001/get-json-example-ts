@@ -18,7 +18,7 @@ const testPrescriptions = [
 ];
 
 export class GetPrescriptions {
-  static get(): Promise<PrescriptionInterface[]> {
+  get(): Promise<PrescriptionInterface[]> {
     return timer(300).pipe(
       map(() => {
         return testPrescriptions;

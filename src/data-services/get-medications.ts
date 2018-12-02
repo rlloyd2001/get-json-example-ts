@@ -26,11 +26,17 @@ const testMeds = [
 ];
 
 export class GetMedications {
-  static get(): Promise<MedicationInterface[]> {
+  get(): Promise<MedicationInterface[]> {
     return timer(300).pipe(
       map(() => {
         return testMeds;
       })
     ).toPromise();
+  }
+
+  byRxcui(rxcui: string): Promise<MedicationInterface[]> {
+    return this.get().then((medications) => {
+      return medications.filter(medication => medication.rxcui === rxcui);
+    });
   }
 }
