@@ -4,15 +4,21 @@
   "description": "nodejs/typescript example",
   "main": "dist/get-json.js",
   "scripts": {
-    "build-ts": "tsc",
-    "start": "npm run build-ts && npm run get",
+    "build": "tsc",
+    "start": "npm run build && npm run get",
     "get": "node dist/get-json.js",
-    "watch-ts": "tsc -w"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "watch": "tsc -w"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.11",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.2.1"
   },
