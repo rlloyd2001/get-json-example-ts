@@ -8,7 +8,8 @@
     "start": "npm run build && npm run get",
     "get": "node dist/getJson.js",
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "lint": "tslint --config tslint.json --project tsconfig.json"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.2.1"
   },
   "dependencies": {

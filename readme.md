@@ -10,6 +10,10 @@ npm install
 ```
 npm run start
 ```
+To check for lint errors:
+```
+npm run lint
+```
 To run unit tests:
 ```
 npm run test
