@@ -10,3 +10,7 @@ npm install
 ```
 npm run start
 ```
+To run unit tests:
+```
+npm run test
+```
