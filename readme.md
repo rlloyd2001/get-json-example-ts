@@ -1,4 +1,4 @@
-## Pre-requisites 
+## Prerequisites
 * Nodejs (tested with 11.1.0)
 * Npm (tested with 6.4.1)
 

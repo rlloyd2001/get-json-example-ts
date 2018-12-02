@@ -17,16 +17,15 @@ export class GetPrescriptionUpdates {
           return getGeneric.from(medication);
         })
         .then((generic: MedicationInterface) => {
-          if (!generic) { return true; }
+          if (!generic) { return; }
           const update: PrescriptionUpdateInterface = {
             prescription_id: prescription.id,
             medication_id: generic.id,
           };
           updates.push(update);
-          return true;
         });
       promises.push(promise);
     });
-    return Promise.all<any>(promises).then(() => updates);
+    return Promise.all(promises).then(() => updates);
   }
 }
