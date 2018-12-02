@@ -1,4 +1,4 @@
-import { PrescriptionUpdateInterface } from './data-services/prescription-update-interface';
+import { PrescriptionUpdateInterface } from './data-services/prescriptionUpdateInterface';
 
 export interface PrescriptionUpdatesDataInterface {
   prescription_updates: PrescriptionUpdateInterface[];

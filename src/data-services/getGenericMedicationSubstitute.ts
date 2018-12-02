@@ -1,5 +1,5 @@
-import { MedicationInterface } from './medication-interface';
-import { QueryMedications } from './query-medications';
+import { QueryMedications } from './queryMedications';
+import { MedicationInterface } from './medicationInterface';
 
 export class GetGenericMedicationSubstitute {
   constructor(public queryMedications: QueryMedications) {}

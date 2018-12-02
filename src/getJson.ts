@@ -1,9 +1,9 @@
-import { GetPrescriptionsTestData } from './data-services/test-data/get-prescriptions-test-data';
-import { GetMedicationsTestData, testMeds } from './data-services/test-data/get-medications-test-data';
-import { GetPrescriptionUpdates } from './data-services/get-prescription-updates';
-import { PrescriptionUpdatesDataInterface } from './prescription-updates-data-interface';
-import { SaveJsonFile } from './file-services/save-json-file';
-import { QueryMedications } from './data-services/query-medications';
+import { GetPrescriptionsTestData } from './data-services/test-data/getPrescriptionsTestData';
+import { GetMedicationsTestData, testMeds } from './data-services/test-data/getMedicationsTestData';
+import { GetPrescriptionUpdates } from './data-services/getPrescriptionUpdates';
+import { QueryMedications } from './data-services/queryMedications';
+import { PrescriptionUpdatesDataInterface } from './prescriptionUpdatesDataInterface';
+import { SaveJsonFile } from './file-services/saveJsonFile';
 
 createPrescriptionUpdatesJson();
 
@@ -17,4 +17,3 @@ async function createPrescriptionUpdatesJson() {
   const saveJsonFile = new SaveJsonFile();
   saveJsonFile.withDateInName(fileData);
 }
-

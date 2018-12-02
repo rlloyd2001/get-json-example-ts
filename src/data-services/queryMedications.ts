@@ -1,5 +1,5 @@
-import { GetMedicationsInterface } from './get-medications-interface';
-import { MedicationInterface } from './medication-interface';
+import { GetMedicationsInterface } from './getMedicationsInterface';
+import { MedicationInterface } from './medicationInterface';
 
 export class QueryMedications {
   constructor(public getMedications: GetMedicationsInterface) {

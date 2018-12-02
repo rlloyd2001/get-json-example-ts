@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import 'mocha';
-import { GetGenericMedicationSubstitute } from './get-generic-medication-substitute';
-import { GetMedicationsTestData, testMeds } from './test-data/get-medications-test-data';
-import { QueryMedications } from './query-medications';
-import { MedicationInterface } from './medication-interface';
+import { GetMedicationsTestData, testMeds } from './test-data/getMedicationsTestData';
+import { GetGenericMedicationSubstitute } from './getGenericMedicationSubstitute';
+import { QueryMedications } from './queryMedications';
+import { MedicationInterface } from './medicationInterface';
 
 describe('GetGenericMedicationSubstitute.from', () => {
   it('should find 1 match if not generic and has generic', async () => {

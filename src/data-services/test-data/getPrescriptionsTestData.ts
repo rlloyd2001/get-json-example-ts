@@ -1,7 +1,7 @@
-import { PrescriptionInterface } from '../prescription-interface';
 import { timer } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { GetPrescriptionsInterface } from '../get-prescriptions-interface';
+import { GetPrescriptionsInterface } from '../getPrescriptionsInterface';
+import { PrescriptionInterface } from '../prescriptionInterface';
 
 const testPrescriptions = [
   {

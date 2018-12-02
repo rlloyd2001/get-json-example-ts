@@ -1,4 +1,4 @@
-import { MedicationInterface } from './medication-interface';
+import { MedicationInterface } from './medicationInterface';
 
 export interface GetMedicationsInterface {
   get(): Promise<MedicationInterface[]>;

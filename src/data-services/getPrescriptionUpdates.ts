@@ -1,8 +1,8 @@
-import { PrescriptionInterface } from './prescription-interface';
-import { PrescriptionUpdateInterface } from './prescription-update-interface';
-import { GetGenericMedicationSubstitute } from './get-generic-medication-substitute';
-import { MedicationInterface } from './medication-interface';
-import { QueryMedications } from './query-medications';
+import { QueryMedications } from './queryMedications';
+import { PrescriptionInterface } from './prescriptionInterface';
+import { PrescriptionUpdateInterface } from './prescriptionUpdateInterface';
+import { GetGenericMedicationSubstitute } from './getGenericMedicationSubstitute';
+import { MedicationInterface } from './medicationInterface';
 
 export class GetPrescriptionUpdates {
   constructor(public queryMedications: QueryMedications) { }

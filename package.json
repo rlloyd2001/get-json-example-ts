@@ -2,11 +2,11 @@
   "name": "get-json-ts-example",
   "version": "1.0.0",
   "description": "nodejs/typescript example",
-  "main": "dist/get-json.js",
+  "main": "dist/getJson.js",
   "scripts": {
     "build": "tsc",
     "start": "npm run build && npm run get",
-    "get": "node dist/get-json.js",
+    "get": "node dist/getJson.js",
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
     "watch": "tsc -w"
   },
