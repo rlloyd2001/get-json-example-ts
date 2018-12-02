@@ -2,17 +2,17 @@ import { PrescriptionInterface } from './prescription-interface';
 import { PrescriptionUpdateInterface } from './prescription-update-interface';
 import { GetGenericMedicationSubstitute } from './get-generic-medication-substitute';
 import { MedicationInterface } from './medication-interface';
-import { GetMedicationsInterface } from './get-medications-interface';
+import { QueryMedications } from './query-medications';
 
 export class GetPrescriptionUpdates {
-  constructor(public getMedications: GetMedicationsInterface) { }
+  constructor(public queryMedications: QueryMedications) { }
 
   from(prescriptions: PrescriptionInterface[]): Promise<PrescriptionUpdateInterface[]> {
-    const getGeneric = new GetGenericMedicationSubstitute(this.getMedications);
+    const getGeneric = new GetGenericMedicationSubstitute(this.queryMedications);
     const updates: PrescriptionUpdateInterface[] = [];
     const promises: Promise<any>[] = [];
     prescriptions.forEach((prescription: PrescriptionInterface) => {
-      const promise = this.getMedications.forId(prescription.medication_id)
+      const promise = this.queryMedications.forId(prescription.medication_id)
         .then((medication: MedicationInterface) => {
           return getGeneric.from(medication);
         })

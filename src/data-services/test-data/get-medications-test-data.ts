@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { MedicationInterface } from '../medication-interface';
 import { GetMedicationsInterface } from '../get-medications-interface';
 
-const testMeds = [
+export const testMeds: MedicationInterface[] = [
   {
     "id": "562cdd706238310003000000",
     "ndc": "ecuzioqsigu",
@@ -23,22 +23,18 @@ const testMeds = [
     "active": true,
     "created_at": "2015-10-25T13:48:40.516Z",
     "updated_at": "2015-10-25T13:48:40.516Z"
-  }
+  },
 ];
 
 export class GetMedicationsTestData implements GetMedicationsInterface {
-  private get(): Promise<MedicationInterface[]> {
+  constructor(public medications: MedicationInterface[]) {}
+
+  get(): Promise<MedicationInterface[]> {
     return timer(300).pipe(
       map(() => {
-        return testMeds;
+        return this.medications;
       })
     ).toPromise();
-  }
-
-  byRxcui(rxcui: string): Promise<MedicationInterface[]> {
-    return this.get().then((medications) => {
-      return medications.filter(medication => medication.rxcui === rxcui);
-    });
   }
 
   forId(id: string): Promise<MedicationInterface> {
@@ -47,3 +43,4 @@ export class GetMedicationsTestData implements GetMedicationsInterface {
     });
   }
 }
+

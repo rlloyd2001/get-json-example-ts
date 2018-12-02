@@ -1,6 +1,6 @@
 import { MedicationInterface } from './medication-interface';
 
 export interface GetMedicationsInterface {
-  byRxcui(rxcui: string): Promise<MedicationInterface[]>;
+  get(): Promise<MedicationInterface[]>;
   forId(id: string): Promise<MedicationInterface>;
 }
